@@ -26,6 +26,8 @@ Or install it yourself as:
 
 ## Usage
 
+Console interface
+
 ```ruby
 require "codebreaker"
 

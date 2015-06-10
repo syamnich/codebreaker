@@ -49,29 +49,28 @@ module Codebreaker
       end
     end
 		
-		describe "#restart" do
+    describe "#restart" do
 
-			it "answer y" do
-				subject.stub_chain(:gets, :chomp).and_return("y")
-				expect(subject).to receive(:run)
-				subject.send(:restart)
-			end
+      it "answer y" do
+        subject.stub_chain(:gets, :chomp).and_return("y")
+        expect(subject).to receive(:run)
+        subject.send(:restart)
+      end
 
-			it "answer n" do
-				subject.stub_chain(:gets, :chomp).and_return("n")
-				expect(subject).to receive(:save)
-				subject.send(:restart)
-			end
-		end
+      it "answer n" do
+        subject.stub_chain(:gets, :chomp).and_return("n")
+        expect(subject).to receive(:save)
+        subject.send(:restart)
+      end
+    end
 
-		describe "#save" do
+    describe "#save" do
 
-			it "answer y" do
-				subject.stub_chain(:gets, :chomp).and_return("y", "username")
-				expect(subject).to receive(:save_to_file)
-				subject.send(:save)
-			end
-		end
-
+      it "answer y" do
+        subject.stub_chain(:gets, :chomp).and_return("y", "username")
+        expect(subject).to receive(:save_to_file)
+        subject.send(:save)
+      end
+    end
   end
 end

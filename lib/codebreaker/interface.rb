@@ -4,11 +4,11 @@ module Codebreaker
   class GameInterface
 		
 		
-		def initialize
+    def initialize
       @game = Game.new
     end
 
-		def run
+    def run
       @game.start
       puts "Welcome to Codebreaker Game"
       while @game.attempts_count > 0
@@ -16,12 +16,12 @@ module Codebreaker
       	answer = gets.chomp
       	guess = @game.check(answer)
         puts guess
-				if guess == "++++"
-        	puts "You won!"
-        	restart
+        if guess == "++++"
+          puts "You won!"
+          restart
         elsif @game.attempts_count.zero?
-        	puts "You lose!"
-        	restart
+          puts "You lose!"
+          restart
         end
       end
     end

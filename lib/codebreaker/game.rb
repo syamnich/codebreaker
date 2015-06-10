@@ -62,8 +62,3 @@ module Codebreaker
     end
   end
 end
-
-#code = Codebreaker::Game.new
-#puts code.inspect
-#puts code.check("1234").inspect
- 
