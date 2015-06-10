@@ -15,6 +15,7 @@ module Codebreaker
       	puts "Enter guess or ? for hint"
       	answer = gets.chomp
       	guess = @game.check(answer)
+        puts guess
 				if guess == "++++"
         	puts "You won!"
         	restart
