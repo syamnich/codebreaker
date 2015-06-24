@@ -77,6 +77,16 @@ module Codebreaker
           subject.instance_variable_set(:@secret_code, "1234")
           expect(subject.check("3333")).to eq("+")
         end
+
+        it "--" do
+          subject.instance_variable_set(:@secret_code, "1615")
+          expect(subject.check("6556")).to eq("--")
+        end
+
+        it "---" do
+          subject.instance_variable_set(:@secret_code, "6561")
+          expect(subject.check("1615")).to eq("---")
+        end
       end
 
       context "hint" do

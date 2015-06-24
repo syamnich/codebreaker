@@ -29,8 +29,14 @@ module Codebreaker
       
       delete_index(code_guess, index)
       delete_index(secret_code, index)
-            
-      code_guess.each { |i| result << "-" if secret_code.include?(i)}
+                  
+      code_guess.each do |i| 
+        if secret_code.include?(i)
+          result << "-" 
+          index = secret_code.index(i)
+          secret_code.delete_at(index)
+        end
+      end
       result
     end
 
